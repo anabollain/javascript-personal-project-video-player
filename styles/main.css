@@ -1,0 +1,192 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.body {
+  /*General properties*/
+  width: 100vw;
+  min-height: 100vh;
+  background-color: black;
+  /*Display*/
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+
+/*Player*/
+.player {
+  /*General properties*/
+  width: 750px;
+  font-size: 0;
+  box-shadow: 0px 0px 50px white;
+  /*Position*/
+  position: relative;
+  overflow: hidden;
+}
+
+/*Video*/
+.player__video {
+  width: 100%;
+}
+
+/*Controls*/
+.player__controls {
+  /*General properties*/
+  width: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  padding-bottom: 10px;
+  /*Display*/
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  /*Position*/
+  position: absolute;
+  bottom: 0;
+  /*Transitions*/
+  transform: translateY(100%) translateY(-5px);
+  transition: all .3s;
+}
+
+.player__controls > * {
+  flex: 1;
+}
+
+.player:hover .player__controls {
+  transform: translateY(0);
+}
+
+/*Progress*/
+.player__controls--progress {
+  /*General properties*/
+  cursor: ew-resize;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.5);
+  margin-bottom: 10px;
+  /*Display*/
+  display: flex;
+  flex-basis: 100%;
+}
+
+.progress__filled {
+  /*General properties*/
+  width: 50%;
+  background-color: #ffc600;
+}
+
+/*Play button*/
+.player__controls--play {
+  /*General properties*/
+  cursor: pointer;
+  color: white;
+  background: none;
+  border: 0;
+  flex-grow: 1;
+}
+
+/*Slider*/
+.player__controls--slider {
+  /*General properties*/
+  width: 100%;
+  -webkit-appearance: none;
+  background: transparent;
+  margin: 0 5px;
+  flex-grow: 4;
+}
+
+.player__controls--slider:focus {
+  outline: none;
+}
+
+/*Webkit*/
+/*Progress bar*/
+.player__controls--slider::-webkit-slider-runnable-track {
+  /*General properties*/
+  cursor: pointer;
+  width: 100%;
+  height: 8px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 0.2px solid rgba(1, 1, 1, 0);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0 0 1px rgba(13, 13, 13, 0); 
+}
+
+/*Progress thumb*/
+.player__controls--slider::-webkit-slider-thumb {
+  /*General properties*/
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  border-radius: 50px;
+  background: #ffc600;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  margin-top: -3.5px;
+  -webkit-appearance: none;
+}
+
+/*Mozilla*/
+/*Progress bar*/
+.player__controls--slider::-moz-range-track {
+  /*General properties*/
+  cursor: pointer;
+  width: 100%;
+  height: 8.4px;
+  border-radius: 1.3px;
+  background: #ffffff;
+  border: 0.2px solid rgba(1, 1, 1, 0);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0 0 1px rgba(13, 13, 13, 0); 
+}
+
+/*Progress thumb*/
+.player__controls--slider::-moz-range-thumb {
+  /*General properties*/
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  border-radius: 50px;
+  background: #ffc600;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(13, 13, 13, 0); 
+}
+
+/*Skip button*/
+.player__controls--skip {
+  /*General properties*/
+  cursor: pointer;
+  max-width: 50px;
+  color: white;
+  background: none;
+  border: 0;
+  line-height: 1;
+  text-align: center;
+  outline: 0;
+  padding: 0;
+}
+
+.player__controls--skip:focus {
+  border-color: #ffc600;
+}
+
+/*Full screen button*/
+.player__controls--fullscreen{
+    /*General properties*/
+    cursor: pointer;
+    max-width: 50px;
+    color: white;
+    background: none;
+    border: 0;
+    line-height: 1;
+    text-align: center;
+    outline: 0;
+    padding: 0;
+}
+
+.player__controls--fullscreen:focus {
+  border-color: #ffc600;
+}
+
+/*Full screen mode*/
+.fullScreen {
+  width: 100vw;
+  height: 100vh;
+}
